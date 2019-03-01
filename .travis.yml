@@ -1,0 +1,26 @@
+language: go
+go:
+- 1.12.x
+notifications:
+  email:
+    on_success: never
+    on_failure: always
+  pushover:
+    on_success: change
+    on_failure: always
+    api_key:
+      secure: BWnZTfqjP1/WFfSMQKcB1k0x2P6d6vANZtA+TdcScEuvQ6HFjPKnd7mkD85f8EJFhBdzT/IMq0epOksQgIw5+YM8yoKCD/B6knquV0j0zthwoBvjuUubOMFpeHhqcEVYLaN76QD4n+A7fDLscT16wTU7RodUGLSEMLtIktBmpcPZ0kOYnpLBxrgOCoFPGAjCVnSdB5HkiucIZ1ROxqSgoHPC38VTqqUuXjns0oEsDO197cfCCqUyLN7GFTXs2YtEyUTnqejGLzlPWGTVtUoS5PyxgIgcD+87mtS9oSqtoSm5m86i9XCrD+YeLYXENSNTzuTshCfWiIdrCgsrDmmMMgMYr2qLQrzmu4PnMRlpt6VvgNmC+Icc52VJcdVlSfJwuysRREvViqPVtZo5NPOjq6Dk+ihVgi0smq7HyFzlKbb1BrGVvRGT3+CTIImmLOxMgRt9y771q7eaqEPk0M1I+IPX0JFaZ2GJHGJf5CXg2EqqviLsjMrkv2kvrPNISl4m2yQBJgu5DXD5ZoBZo2wVttYHt999lyq4OQ/7Fh0ggIbMTqk77Qn0Hzfs+M5VPCXb/IEjwg7vq9vocygx0aXNthx2zPX7pm9jKHDXDryRT9kGE1v6o/RVSd4iIiRLaMWEe0iuXe9lkQZWYXt89mci9WNswJuU4U66O8tcbXNjpyM=
+    users:
+      secure: mhOr+lDBIn2hY29yNkTxDf0Z3n72uY6F2E3FXSRllL98nhrc5T/aKq4/osvjrmrG1Rf+ifQkQgNqGJYFkvwBkk9Ofluht2HcwdY51WTBAtRezshMLBu+Ba2bO2ockhZoFmc8F0v6euJcDqqwF8RbFJL4OEX3HGM21ulImIH9Kf7/VXr3XiFuLJp0HO2mSpQFztw9s08wBxQ7kHtYvA+tmNwLGoSG9K3WZ6ahgeXd6DoOdrdqD2GcSudUhJNGx69nhY9/nsVzIBaSUxPC45gH/Z9ZE1+XqP2aVjckMgJkkiUr+wpKcgnoGNOYaOsUimMzB3U6uAuR0uVIq+d7plTssT9J+FzGh7HCnDsny7enySI+kEb6LJR92VwJbQdh/UmkUONesG2Cy0Ui3Rgw25Xi6qpPosL4zcyEylJpen9ctvpLBvcI4jit6JKEPDPc2v1V8yb9/IdgdcY9W0ZBx77nPw+mQL47wj4MLfMCIH0IcVMS2M3sjIel8AL+s2uJSbymyOBFSLRDDq0uJmLCs2ljRV5Ulpx4rfQsEz6nL3fRU4zcFdQhIGYSAJxEl1vLIT3oMsugBxewelfmssqg+QWvh6BZPpClctHYKNx+8lriuXQZ54OtkqM5zoANB3ArzET478Ll9OMUdaeyCHNaeT7SaAhYGsjk0Z3sKUONq1dXEf0=
+install:
+- "./script/bootstrap"
+script:
+- "./bin/golangci-lint"
+deploy:
+  skip_cleanup: true
+  provider: script
+  script: curl -sSfL https://git.io/goreleaser | bash
+  on:
+    tags: true
+    repo: docwhat/go-git-info
+    condition: "$TRAVIS_OS_NAME = linux"
