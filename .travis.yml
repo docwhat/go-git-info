@@ -16,6 +16,8 @@ install:
 - "./script/bootstrap"
 script:
 - "./bin/golangci-lint"
+- "go test ./..."
+- "go build ./..."
 deploy:
   skip_cleanup: true
   provider: script
