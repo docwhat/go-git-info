@@ -1,3 +1,5 @@
+[![Build Status](https://travis-ci.org/docwhat/go-git-info.svg?branch=master)](https://travis-ci.org/docwhat/go-git-info)
+
 # git-info
 
 A fast, pure go tool to get information from git; useful (for example)
