@@ -5,6 +5,16 @@
 A fast, pure go tool to get information from git; useful (for example)
 for creating prompts.
 
+## Why?
+
+You need your shell prompt to be quick. Gathering information about the
+current git repository can be slow using the normal `git` command.
+
+`git-info` replaces the `git` command for gathering prompt information.
+
+`git-info` is also cross platform so that you can use it on all
+platforms you use your shell prompt on.
+
 ## Similar projects
 
 -   [romkatv](https://github.com/romkatv)'s
