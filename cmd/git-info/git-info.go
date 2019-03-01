@@ -1,6 +1,10 @@
 package main
 
-import "fmt"
+import (
+	"fmt"
+
+	"docwhat.org/go-git-info/internal/app/cli"
+)
 
 var (
 	version = "dev"
@@ -13,5 +17,5 @@ func versionString() string {
 }
 
 func main() {
-	fmt.Printf("version: %v\n", versionString())
+	cli.Run(versionString())
 }
