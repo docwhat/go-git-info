@@ -1,6 +1,9 @@
 language: go
 go:
-- 1.12.x
+  - 1.12.x
+env:
+  global:
+    - GO111MODULE=on
 notifications:
   email:
     on_success: never
@@ -13,11 +16,14 @@ notifications:
     users:
       secure: mhOr+lDBIn2hY29yNkTxDf0Z3n72uY6F2E3FXSRllL98nhrc5T/aKq4/osvjrmrG1Rf+ifQkQgNqGJYFkvwBkk9Ofluht2HcwdY51WTBAtRezshMLBu+Ba2bO2ockhZoFmc8F0v6euJcDqqwF8RbFJL4OEX3HGM21ulImIH9Kf7/VXr3XiFuLJp0HO2mSpQFztw9s08wBxQ7kHtYvA+tmNwLGoSG9K3WZ6ahgeXd6DoOdrdqD2GcSudUhJNGx69nhY9/nsVzIBaSUxPC45gH/Z9ZE1+XqP2aVjckMgJkkiUr+wpKcgnoGNOYaOsUimMzB3U6uAuR0uVIq+d7plTssT9J+FzGh7HCnDsny7enySI+kEb6LJR92VwJbQdh/UmkUONesG2Cy0Ui3Rgw25Xi6qpPosL4zcyEylJpen9ctvpLBvcI4jit6JKEPDPc2v1V8yb9/IdgdcY9W0ZBx77nPw+mQL47wj4MLfMCIH0IcVMS2M3sjIel8AL+s2uJSbymyOBFSLRDDq0uJmLCs2ljRV5Ulpx4rfQsEz6nL3fRU4zcFdQhIGYSAJxEl1vLIT3oMsugBxewelfmssqg+QWvh6BZPpClctHYKNx+8lriuXQZ54OtkqM5zoANB3ArzET478Ll9OMUdaeyCHNaeT7SaAhYGsjk0Z3sKUONq1dXEf0=
 install:
-- "./script/bootstrap"
+  - "./script/bootstrap"
 script:
-- "./bin/golangci-lint"
-- "go test ./..."
-- "go build ./..."
+  - "./bin/golangci-lint run ./..."
+  - "go test ./..."
+  - "go build ./..."
+after_success:
+  - "bash <(curl -s https://codecov.io/bash)"
+  - 'test -z "$(git status --porcelain)"'
 deploy:
   skip_cleanup: true
   provider: script
