@@ -16,13 +16,10 @@ builds:
   goarm:
     - 7
 archive:
-  git:
-    short_hash: true
-  archive:
-    format: binary
-    files:
-      - LICENSE*
-      - README*
+  format: binary
+  files:
+    - LICENSE*
+    - README*
 checksum:
   name_template: 'checksums.txt'
 snapshot:

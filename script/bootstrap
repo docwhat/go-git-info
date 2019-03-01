@@ -1,0 +1,19 @@
+#!/bin/bash
+
+set -eEuo pipefail
+
+if [[ -z ${CI:-} ]]; then
+  if ! command -v pre-commit >/dev/null; then
+    echo "Please install pre-commit; see https://pre-commit.com/"
+    exit 10
+  fi
+
+  pre-commit install --overwrite --install-hooks --hook-type commit-msg
+  pre-commit install --overwrite --install-hooks --hook-type pre-commit
+fi
+
+curl -sSfL \
+  https://install.goreleaser.com/github.com/golangci/golangci-lint.sh |
+  sh -s v1.15.0
+
+# EOF
