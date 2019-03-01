@@ -6,6 +6,16 @@
     <a href="https://goreportcard.com/report/github.com/docwhat/go-git-info">
         <img src="https://goreportcard.com/badge/github.com/docwhat/go-git-info" alt="Go Report Card" />
     </a>
+    <img alt="GitHub" src="https://img.shields.io/github/license/docwhat/go-git-info.svg">
+    <br />
+    <a href="https://github.com/docwhat/go-git-info/graphs/contributors" alt="Contributors">
+        <img src="https://img.shields.io/github/contributors/docwhat/go-git-info.svg" /></a>
+    <a href="https://github.com/docwhat/go-git-info/issues" alt="GitHub issues">
+        <img alt="GitHub issues" src="https://img.shields.io/github/issues/docwhat/go-git-info.svg">
+    </a>
+    <a href="https://github.com/docwhat/go-git-info/pulls" alt="GitHub pull requests">
+        <img alt="GitHub pull requests" src="https://img.shields.io/github/issues-pr/docwhat/go-git-info.svg">
+    </a>
 </p>
 
 > A fast, pure go tool to get information from git; useful (for example)
