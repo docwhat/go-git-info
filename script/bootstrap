@@ -3,13 +3,13 @@
 set -eEuo pipefail
 
 if [[ -z ${CI:-} ]]; then
-  if ! command -v pre-commit >/dev/null; then
-    echo "Please install pre-commit; see https://pre-commit.com/"
+  if ! command -v >/dev/null; then
+    echo "Please install an LTS version of Node.js"
+    echo "        https://nodejs.org/en/"
     exit 10
   fi
 
-  pre-commit install --overwrite --install-hooks --hook-type commit-msg
-  pre-commit install --overwrite --install-hooks --hook-type pre-commit
+  yarn install
 fi
 
 curl -sSfL \

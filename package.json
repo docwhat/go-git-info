@@ -1,0 +1,32 @@
+{
+  "name": "go-git-info",
+  "version": "0.0.0",
+  "private": true,
+  "repository": "git@github.com:docwhat/go-git-info.git",
+  "license": "MIT",
+  "author": "Christian Höltje <docwhat@gerf.org>",
+  "main": "index.js",
+  "husky": {
+    "hooks": {
+      "commit-msg": "commitlint -E HUSKY_GIT_PARAMS",
+      "pre-commit": "lint-staged"
+    }
+  },
+  "lint-staged": {
+    "*.go": [
+      "bin/golangci-lint",
+      "go test ./..."
+    ],
+    "package.json": [
+      "sort-package-json",
+      "git add"
+    ]
+  },
+  "devDependencies": {
+    "@commitlint/cli": "^7.5.2",
+    "@commitlint/config-conventional": "^7.5.0",
+    "husky": "^1.3.1",
+    "lint-staged": "^8.1.5",
+    "sort-package-json": "^1.20.0"
+  }
+}
