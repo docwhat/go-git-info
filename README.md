@@ -10,11 +10,13 @@
         <img src="https://img.shields.io/badge/godoc-reference-blue.svg?style=flat-square" alt="Go Doc">
     </a>
     <a href="https://github.com/golang-standards/docwhat/go-git-info">
-        <img src="https://img.shields.io/github/release/docwhat/go-git-info.svg" alt="Release"></a></p>
+        <img src="https://img.shields.io/github/release/docwhat/go-git-info.svg" alt="Release">
+    </a>
     <img alt="License" src="https://img.shields.io/github/license/docwhat/go-git-info.svg">
     <br />
     <a href="https://github.com/docwhat/go-git-info/graphs/contributors" alt="Contributors">
-        <img src="https://img.shields.io/github/contributors/docwhat/go-git-info.svg" /></a>
+        <img src="https://img.shields.io/github/contributors/docwhat/go-git-info.svg" />
+    </a>
     <a href="https://github.com/docwhat/go-git-info/issues" alt="GitHub issues">
         <img alt="GitHub issues" src="https://img.shields.io/github/issues/docwhat/go-git-info.svg">
     </a>
