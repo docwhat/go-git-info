@@ -1,9 +1,15 @@
-[![Build Status](https://travis-ci.org/docwhat/go-git-info.svg?branch=master)](https://travis-ci.org/docwhat/go-git-info)
+<h1 align="center">Git Info</h1>
+<p align="center">
+    <a href="https://travis-ci.org/docwhat/go-git-info">
+        <img src="https://travis-ci.org/docwhat/go-git-info.svg?branch=master" alt="Build Status" />
+    </a>
+    <a href="https://goreportcard.com/report/github.com/docwhat/go-git-info">
+        <img src="https://goreportcard.com/badge/github.com/docwhat/go-git-info" alt="Go Report Card" />
+    </a>
+</p>
 
-# git-info
-
-A fast, pure go tool to get information from git; useful (for example)
-for creating prompts.
+> A fast, pure go tool to get information from git; useful (for example)
+> for creating prompts.
 
 ## Why?
 
