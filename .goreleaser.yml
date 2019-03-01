@@ -5,13 +5,24 @@ before:
 builds:
 - env:
   - CGO_ENABLED=0
+  goos:
+    - darwin
+    - linux
+    - freebsd
+    - windows
+  goarch:
+    - amd64
+    - arm
+  goarm:
+    - 7
 archive:
-  replacements:
-    darwin: Darwin
-    linux: Linux
-    windows: Windows
-    386: i386
-    amd64: x86_64
+  git:
+    short_hash: true
+  archive:
+    format: binary
+    files:
+      - LICENSE*
+      - README*
 checksum:
   name_template: 'checksums.txt'
 snapshot:
@@ -20,5 +31,22 @@ changelog:
   sort: asc
   filters:
     exclude:
-    - '^docs:'
-    - '^test:'
+      # CHANGELOG worthy:
+      # feat: add beta sequence
+      # fix: remove broken confirmation message
+      # refactor: share logic between 4d3d3d3 and flarhgunnstow
+      # perf: improved performance of the zabbit
+      #
+      # NOISE:
+      # chore: add Oyster build script
+      # docs: explain hat wobble
+      # lint: convert tabs to spaces
+      # style: convert tabs to spaces
+      # test: ensure Tayne retains clothing
+    - '(?i)^(chore|docs|lint|style|test)'
+    - '(?i)typo|thinko'
+release:
+  github:
+    owner: docwhat
+    name: git-info
+  name_template: "{{ .ProjectName }}-v{{ .Version }} {{ .Env.USER }}"
