@@ -5,6 +5,7 @@ before:
 builds:
 - env:
   - CGO_ENABLED=0
+  main: ./cmd/git-info/git-info.go
   goos:
     - darwin
     - linux
@@ -13,13 +14,21 @@ builds:
   goarch:
     - amd64
     - arm
+    - ppc64le
   goarm:
+    - 6
     - 7
 archive:
   format: binary
   files:
     - LICENSE*
     - README*
+  replacements:
+    darwin: Darwin
+    linux: Linux
+    windows: Windows
+    386: i386
+    amd64: x86_64
 checksum:
   name_template: 'checksums.txt'
 snapshot:
@@ -47,3 +56,12 @@ release:
     owner: docwhat
     name: git-info
   name_template: "{{ .ProjectName }}-v{{ .Version }} {{ .Env.USER }}"
+# brew:
+#   github:
+#     owner: docwhat
+#     name: homebrew-tap
+#   folder: Formula
+#   homepage:  https://github.com/docwhat/go-git-info
+#   description: Fast git information for your shell prompt
+#   test: |
+#     system "#{bin}/git-info -v"
