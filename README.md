@@ -6,13 +6,17 @@
     <a href="https://goreportcard.com/report/github.com/docwhat/go-git-info">
         <img src="https://goreportcard.com/badge/github.com/docwhat/go-git-info" alt="Go Report Card" />
     </a>
-    <a href="http://godoc.org/github.com/docwhat/go-git-info">
-        <img src="https://img.shields.io/badge/godoc-reference-blue.svg?style=flat-square" alt="Go Doc">
+    <a href="https://codecov.io/gh/docwhat/go-git-info">
+        <img src="https://codecov.io/gh/docwhat/go-git-info/branch/master/graph/badge.svg" />
     </a>
+    <br />
     <a href="https://github.com/golang-standards/docwhat/go-git-info">
         <img src="https://img.shields.io/github/release/docwhat/go-git-info.svg" alt="Release">
     </a>
-    <img alt="License" src="https://img.shields.io/github/license/docwhat/go-git-info.svg">
+    <img src="https://img.shields.io/github/license/docwhat/go-git-info.svg" alt="License">
+    <a href="http://godoc.org/github.com/docwhat/go-git-info">
+        <img src="https://img.shields.io/badge/godoc-reference-blue.svg?style=flat-square" alt="Go Doc">
+    </a>
     <br />
     <a href="https://github.com/docwhat/go-git-info/graphs/contributors" alt="Contributors">
         <img src="https://img.shields.io/github/contributors/docwhat/go-git-info.svg" />
