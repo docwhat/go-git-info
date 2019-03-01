@@ -4,6 +4,7 @@ go:
 env:
   global:
     - GO111MODULE=on
+    - CGO_ENABLED=0
 notifications:
   email:
     on_success: never
