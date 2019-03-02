@@ -9,18 +9,19 @@
   "husky": {
     "hooks": {
       "commit-msg": "commitlint -E HUSKY_GIT_PARAMS",
-      "pre-commit": "lint-staged"
+      "pre-commit": "lint-staged && go test ./..."
     }
   },
   "lint-staged": {
-    "*.go": [
-      "bin/golangci-lint",
-      "go test ./..."
-    ],
-    "package.json": [
-      "sort-package-json",
-      "git add"
-    ]
+    "linters": {
+      "*.go": [
+        "bin/golangci-lint run "
+      ],
+      "package.json": [
+        "sort-package-json",
+        "git add"
+      ]
+    }
   },
   "config": {
     "commitizen": {

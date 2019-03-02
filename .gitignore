@@ -17,7 +17,7 @@ coverage.txt
 # GoReleaser
 /dist/
 /bin/
-git-info
+/git-info*
 
 # Node
 node_modules/
