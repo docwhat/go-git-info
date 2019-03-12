@@ -25,6 +25,17 @@ Fetch the required dependencies:
 $ script/bootstrap
 ```
 
+After bootstrapping, you can start to build the project:
+```
+GO111MODULE=on
+CGO_ENABLED=0
+go build ./...
+```
+After this, you can run the main file:
+```
+go run cmd/git-info/git-info.go
+```
+
 Before you do any changes, make sure the tests pass:
 
 ```sh
